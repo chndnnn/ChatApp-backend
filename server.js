@@ -19,9 +19,11 @@ let applicationServer = app.listen(port,()=>{
 
 const io = new Server(applicationServer,{
     pingTimeout:60000,
-    cors:{
-        origin:"https://chatapp-backend-1-kwns.onrender.com",
-    }
+   cors: {
+    origin: 'https://roaring-banoffee-4a4a09.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    credentials: true
+  }
 });
 
 io.on("connection",(socket)=>{
