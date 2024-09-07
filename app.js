@@ -6,7 +6,11 @@ import notiRouter from "./Routers/notificationRouter.js"
 import cors from "cors"
 
 const app = express()
-app.use(cors())
+app.use(cors({
+  origin: 'https://roaring-banoffee-4a4a09.netlify.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  credentials: true
+}))
 app.use(express.json())
 app.use('/chat/v1',UserRouter,chatRouter,messageRouter,notiRouter)
 
