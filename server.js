@@ -20,7 +20,7 @@ let applicationServer = app.listen(port,()=>{
 const io = new Server(applicationServer,{
     pingTimeout:60000,
     cors:{
-        origin:"http://localhost:5173",
+        origin:"https://chatapp-backend-1-kwns.onrender.com",
     }
 });
 
